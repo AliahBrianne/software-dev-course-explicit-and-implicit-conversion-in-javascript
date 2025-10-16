@@ -17,16 +17,32 @@ Include at least one edge case, like NaN, undefined, or null .
 Use console.log() to clearly show the before-and-after type conversions.
 
 */
-
-
-let result = "5" - 2;
+let result = Number('5')-2; //Convert string "5" to number for clairty 
 console.log("The result is: " + result);
 
-let isValid = Boolean("false");
+let isValid = ("false" === "true"); //Convert string to boolean explicitly
 if (isValid) {
     console.log("This is valid!");
+} else {
+  console.log("This is NOT valid!") //added for clairity
 }
 
 let age = "25";
-let totalAge = age + 5;
+let totalAge = Number(age) + 5; //Convert string to number to perform addition
 console.log("Total Age: " + totalAge);
+
+
+//Implicit conversion example
+let resultImplicit= null + 10;
+console.log("Testing null + 10🤔"); //checking how null behaves with addition
+console.log("Result:", resultImplicit);
+console.log("Type of result:", typeof resultImplicit);
+
+// Explicit conversion example
+let userInput = "123abc";
+let resultNumber = Number(userInput);
+console.log("Testing explicit conversion of;", userInput); //converting string to number
+console.log("After Number():", resultNumber);
+console.log("Type of result:", typeof resultNumber);
+
+
